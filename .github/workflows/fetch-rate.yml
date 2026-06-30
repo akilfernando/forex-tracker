@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: "20"
 
-      - run: npm install cheerio
+      - run: npm install cheerio nodemailer
 
       - run: node scripts/fetch-rate.mjs
 
@@ -33,3 +33,13 @@ jobs:
             git commit -m "rate update $(date -u +%F)"
             git push
           fi
+
+      - name: Email alert if buy crossed floor
+        run: node scripts/alert.mjs
+        env:
+          ALERT_FLOOR: ${{ vars.ALERT_FLOOR }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
