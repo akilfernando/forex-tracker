@@ -1,0 +1,12 @@
+# Render blueprint: serves the dashboard as a static site.
+# The app is fully static (index.html + rates.json, no server code), so
+# no build step is needed — Render just publishes the repo root and
+# auto-redeploys on every push to main (including the daily rate-bot commit).
+# Connect this repo at https://dashboard.render.com/blueprints to apply.
+services:
+  - type: web
+    name: forex-tracker
+    runtime: static
+    buildCommand: "echo 'static site, nothing to build'"
+    staticPublishPath: .
+    autoDeploy: true
