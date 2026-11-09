@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:05:21.082Z",
+  "updated_at": "2026-11-09T14:11:58.743Z",
   "history": [
     {
       "date": "2026-06-30",
@@ -917,6 +917,13 @@
       "ndb_buy": 328,
       "ndb_sell": 337,
       "market_mid": 332.4171
+    },
+    {
+      "date": "2026-11-09",
+      "ndb_effective": "2026-11-09",
+      "ndb_buy": 328,
+      "ndb_sell": 337,
+      "market_mid": 332.4204
     }
   ]
 }
